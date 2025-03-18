@@ -33,7 +33,7 @@ getgenv().decode = function(input : string, gameversion : number)
 	if input == "" then
 		return "Decode Input is Empty, Arg1."
 	elseif gameversion == nil or not math.floor(game.PlaceVersion / (2 * math.pi)) then
-		print(gameversion)
+		print(gameversion, ".. something?")
 		print("Bricked. #1")
 		wait(0.3)
 		while true do 
