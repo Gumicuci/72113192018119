@@ -5,18 +5,21 @@ getgenv().encode = function(input : string, gameversion : number)
 	if input == "" then
 		return "Encode Input is Empty, Arg1."
 	elseif gameversion == nil or not math.floor(game.PlaceVersion / (2 * math.pi)) then
-		while true do end
+		while true do 
+			print("")
+		end
 	else
 		local result = ""
 
 		for i = 1, #input do
 			local char = input:sub(i, i)
 			for index, value in ipairs(array) do
-			if char == value then
-				if array2[index] then
-				result = result .. tostring(array2[index])
+				if char == value then
+					if array2[index] then
+						result = result .. tostring(array2[index])
+					end
+					break
 				end
-				break
 			end
 		end
 		
@@ -28,18 +31,21 @@ getgenv().decode = function(input : string, gameversion : number)
 	if input == "" then
 		return "Decode Input is Empty, Arg1."
 	elseif gameversion == nil or not math.floor(game.PlaceVersion / (2 * math.pi)) then
-		while true do end
+		while true do 
+			print("")
+		end
 	else
 		local result = ""
 
 		for i = 1, #input do
 			local char = input:sub(i, i)
 			for index, value in ipairs(array2) do
-			if char == value then
-				if array[index] then
-				result = result .. tostring(array[index])
+				if char == value then
+					if array[index] then
+						result = result .. tostring(array[index])
+					end
+					break
 				end
-				break
 			end
 		end
 		
