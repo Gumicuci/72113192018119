@@ -4,12 +4,6 @@ local array2 = {"$", "1", "y", "x", "6", "a", "l", "4", "U", "u", "J", "p", "&",
 getgenv().encode = function(input : string, gameversion : number)
 	if input == "" then
 		return "Encode Input is Empty, Arg1."
-	elseif gameversion == nil or not math.floor(game.PlaceVersion / (2 * math.pi)) then
-		print("Bricked. #2")
-		wait(0.3)
-		while true do 
-			print("")
-		end
 	else
 		local result = ""
 
@@ -32,13 +26,6 @@ end
 getgenv().decode = function(input : string, gameversion : number)
 	if input == "" then
 		return "Decode Input is Empty, Arg1."
-	elseif gameversion == nil or not math.floor(game.PlaceVersion / (2 * math.pi)) then
-		print(gameversion, ".. something?")
-		print("Bricked. #1")
-		wait(0.3)
-		while true do 
-			print("")
-		end
 	else
 		local result = ""
 
