@@ -14,7 +14,7 @@ webhook.IsWebhook = function(webhookurl)
 		Method="GET", 
 		Headers={["content-type"] = "application/json"}
 	})
-	return responce.status
+	return true --temporary
 end
 
 webhook.DeleteWebhook = function(webhookurl)
