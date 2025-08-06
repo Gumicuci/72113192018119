@@ -1,7 +1,7 @@
 --[[
 
 	hihi!, this script HASN'T been tested yet, but it should work.. hopefully xd - Gumicuci
-	v1.0.0
+	v1.0.2
 ]]
 
 local request, getgenv = request, getgenv
@@ -44,7 +44,7 @@ webhook.DeleteWebhook = function(webhookurl)
 end
 
 webhook.SendWebhook = function(webhookurl, data)
-	if webhook.iswebhook() then
+	if webhook.IsWebhook(webhookurl) then
 		POST(webhookurl, JSONEncode(data))
 	end
 end
