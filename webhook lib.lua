@@ -1,7 +1,7 @@
 --[[
 
 	hihi!, this script HASN'T been tested yet, but it should work.. hopefully xd - Gumicuci
-
+	v1.0.0
 ]]
 
 local request, getgenv = request, getgenv
@@ -10,7 +10,7 @@ local headers = {["content-type"] = "application/json"}
 local webhook = {}
 
 webhook.GetRblxUserThumbnail = function(userid)
-	local function getImageUrl()
+	local function GetImageUrl()
 		local response = request({
 			Url = "https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=".. userid.."&format=Png&size=150x150", 
 			Method = "GET", 
@@ -18,9 +18,11 @@ webhook.GetRblxUserThumbnail = function(userid)
 		})
 		
 		local data = JSONDecode(response.Body)
-		local imageUrl = data.data[1].imageUrl
-		return imageUrl
+		local imageurl = data.data[1].imageUrl
+		return imageurl
 	end
+	
+	return GetImageUrl()
 end
 
 webhook.IsWebhook = function(webhookurl)
@@ -29,7 +31,7 @@ webhook.IsWebhook = function(webhookurl)
 		Method="GET", 
 		Headers={["content-type"] = "application/json"}
 	})
-	return responce.status
+	return true
 end
 
 webhook.DeleteWebhook = function(webhookurl)
@@ -38,7 +40,7 @@ webhook.DeleteWebhook = function(webhookurl)
 		Method="DELETE", 
 		Headers={["content-type"] = "application/json"}
 	})
-	return responce.status
+	return responce
 end
 
 webhook.SendWebhook = function(webhookurl, data)
